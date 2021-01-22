@@ -9,8 +9,9 @@
             const http = new XMLHttpRequest();
             http.open('DELETE','/api/note/'+id)
             http.onreadystatechange = function (){
-                if (http.readyState===http.DONE&&http.readyState===200){
-                    window.location = window.location;
+                if (http.readyState===http.DONE&&http.status===200){
+                    alert("note deleted")
+                    location.reload();
                 }
             }
             http.send();
